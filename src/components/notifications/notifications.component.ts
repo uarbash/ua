@@ -65,7 +65,7 @@ export class NotificationsComponent implements OnInit, OnDestroy {
     this.notificationsList[index].newRequest = false;
     const personalEmail = this.dataManagerService.$profile.getValue().email;
     this.http.put(url + '/profile?notification_seen=' + personalEmail, this.notificationsBackend[index])
-      .subscribe((data) => console.log(data));
+      .subscribe();
     this.fetchNotifications();
     this.checkForNewNotifications();
   }

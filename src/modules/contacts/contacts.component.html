@@ -36,7 +36,7 @@
     </div>
     <div class="column__3">
       <div class="profile-card-container" *ngFor="let selectedProfile of selectedProfileList; index as i">
-        <app-toggle-box header="{{selectedProfile.firstname}}'s Info" *ngIf="selectedProfile">
+        <app-toggle-box header="{{selectedProfile.firstname}}'s Profile" *ngIf="selectedProfile">
           <div class="account-container">
             <div class="header">
               {{selectedProfile.firstname}} {{selectedProfile.lastname}}
@@ -61,7 +61,7 @@
                   </div>
                 </div>
               </div>
-              <app-chat-box *ngIf="selectedProfile" [receivedEmail]="selectedProfile.email" ></app-chat-box>
+              <app-chat-box *ngIf="selectedProfile" [selectedProfile]="selectedProfile" ></app-chat-box>
             </div>
           </div>
         </app-toggle-box>
