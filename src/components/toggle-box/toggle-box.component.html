@@ -1,5 +1,5 @@
 <div class="toggle-box" [ngClass]="{'toggle-box-closed': !isOpen}">
-  <div class="toggle-box__header" (click)="onClickHeader()">
+  <div class="toggle-box__header" (click)="onClickHeader()" *ngIf="!customHeader">
     <div class="toggle-box__header__text">
       {{header}}
     </div>
@@ -7,6 +7,7 @@
       expand_more
     </div>
   </div>
+  <ng-content select="[header]" *ngIf="customHeader"></ng-content>
   <div class="toggle-box__body">
     <ng-content></ng-content>
   </div>

@@ -1,0 +1,43 @@
+<app-toggle-box
+  [customHeader]="true"
+  [isOpen]="isCollapse" header="{{selectedProfile.firstname}}'s Profile" *ngIf="selectedProfile">
+  <div header class="custom-toggle-box-header">
+    <div class="header-title" (click)="onClickShowCard()">
+      <span class="material-icons profile-icon">account_circle</span>
+      {{selectedProfile.firstname}} {{selectedProfile.lastname}}
+    </div>
+    <div class="btn-group">
+      <div class="material-icons icon" (click)="onClickCloseProfile()">
+        close
+      </div>
+      <div class="material-icons icon"
+           [ngClass]="{'icon-box-closed': isCollapse}"
+           (click)="onClickCollapseProfile()">
+        expand_more
+      </div>
+    </div>
+    <div class="profile-info" *ngIf="showCard">
+      <div class="column">
+        <div class="item">
+          Birthday: <span class="text-yellow">{{selectedProfile.birthday}}</span>
+        </div>
+        <div class="item">
+          Address: <span class="text-yellow">{{selectedProfile.address}}</span>
+        </div>
+      </div>
+      <div class="column">
+        <div class="item">
+          Phone: <span class="text-yellow">{{selectedProfile.phone}}</span>
+        </div>
+        <div class="item">
+          E-Mail: <span class="text-yellow">{{selectedProfile.email}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="account-container">
+    <div class="body">
+      <app-chat-box *ngIf="selectedProfile" [selectedProfile]="selectedProfile" ></app-chat-box>
+    </div>
+  </div>
+</app-toggle-box>
