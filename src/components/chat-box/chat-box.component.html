@@ -7,6 +7,6 @@
         </div>
       </div>
     </div>
-    <input class="chat-input" (keydown.enter)="sendMsg($event)">
+    <input class="chat-input" [placeholder]="'send a message to ' + selectedProfile.firstname" (keydown.enter)="sendMsg($event)">
   </div>
 </div>
