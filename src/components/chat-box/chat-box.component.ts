@@ -21,7 +21,7 @@ export class ChatBoxComponent implements AfterViewInit, OnDestroy {
     if (this.container){
       setTimeout(() => this.container.nativeElement.scrollTop = this.container.nativeElement.scrollHeight, 200);
     }
-    this.subscriptionChat = interval(5000).subscribe(() => this.fetchChat());
+    this.subscriptionChat = interval(1000).subscribe(() => this.fetchChat());
   }
   public ngOnDestroy(): void {
     this.subscriptionChat.unsubscribe();
