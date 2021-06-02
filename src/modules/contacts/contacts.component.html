@@ -35,35 +35,37 @@
       </app-toggle-box>
     </div>
     <div class="column__3">
-      <app-toggle-box header="{{selectedProfile.firstname}}'s Info" *ngIf="selectedProfile">
-        <div class="account-container">
-          <div class="header">
-            {{selectedProfile.firstname}} {{selectedProfile.lastname}}
-            <div class="material-icons close-icon" (click)="onClickCloseProfile()">close</div>
-          </div>
-          <div class="body">
-            <div class="columns-container">
-              <div class="column">
-                <div class="item">
-                  Birthday: <span class="text-yellow">{{selectedProfile.birthday}}</span>
-                </div>
-                <div class="item">
-                  Address: <span class="text-yellow">{{selectedProfile.address}}</span>
-                </div>
-              </div>
-              <div class="column">
-                <div class="item">
-                  Phone: <span class="text-yellow">{{selectedProfile.phone}}</span>
-                </div>
-                <div class="item">
-                  E-Mail: <span class="text-yellow">{{selectedProfile.email}}</span>
-                </div>
-              </div>
+      <div class="profile-card-container" *ngFor="let selectedProfile of selectedProfileList; index as i">
+        <app-toggle-box header="{{selectedProfile.firstname}}'s Info" *ngIf="selectedProfile">
+          <div class="account-container">
+            <div class="header">
+              {{selectedProfile.firstname}} {{selectedProfile.lastname}}
+              <div class="material-icons close-icon" (click)="onClickCloseProfile(i)">close</div>
             </div>
-            <app-chat-box *ngIf="selectedProfile" [receivedEmail]="selectedProfile.email" ></app-chat-box>
+            <div class="body">
+              <div class="columns-container">
+                <div class="column">
+                  <div class="item">
+                    Birthday: <span class="text-yellow">{{selectedProfile.birthday}}</span>
+                  </div>
+                  <div class="item">
+                    Address: <span class="text-yellow">{{selectedProfile.address}}</span>
+                  </div>
+                </div>
+                <div class="column">
+                  <div class="item">
+                    Phone: <span class="text-yellow">{{selectedProfile.phone}}</span>
+                  </div>
+                  <div class="item">
+                    E-Mail: <span class="text-yellow">{{selectedProfile.email}}</span>
+                  </div>
+                </div>
+              </div>
+              <app-chat-box *ngIf="selectedProfile" [receivedEmail]="selectedProfile.email" ></app-chat-box>
+            </div>
           </div>
-        </div>
-      </app-toggle-box>
+        </app-toggle-box>
+      </div>
     </div>
   </div>
 </div>

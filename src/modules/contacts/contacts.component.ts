@@ -27,7 +27,7 @@ export class ContactsComponent implements OnInit {
   public contactsController: FormGroup;
   public peopleList: RequestCardBody [] = [];
   public friendsList: FriendCard [] = [];
-  public selectedProfile: FriendCard = undefined;
+  public selectedProfileList: FriendCard [] = [];
 
   constructor(private fb: FormBuilder, private http: HttpClient, private dataManagerService: DataManagerService) {
     this.fetchFriendsList();
@@ -38,11 +38,16 @@ export class ContactsComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]]
     });
   }
-  public onClickCloseProfile(): void{
-    this.selectedProfile = undefined;
+  public onClickCloseProfile(index: number): void{
+    this.selectedProfileList.splice(index, 1);
   }
   public onClickOpenProfile(index: number): void{
-    this.selectedProfile = this.friendsList[index];
+    const isOpen = this.selectedProfileList.some((card) => {
+      return card.email === this.friendsList[index].email;
+    });
+    if (!isOpen){
+      this.selectedProfileList.push(this.friendsList[index]);
+    }
   }
   public onClickSendFriendRequest(index: number): void{
     const personal = this.dataManagerService.$profile.getValue().email;

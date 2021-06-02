@@ -109,4 +109,8 @@
     }
   }
 }
-
+.profile-card-container{
+  &:not(:first-child){
+    margin-top: 3rem;
+  }
+}
