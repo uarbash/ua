@@ -1,0 +1,34 @@
+<div class="profile" *ngIf="profile">
+  <div class="profile__header">
+    <div class="welcome-msg">
+      Hello <span class="header-name">{{this.profile.firstname}}</span> !! we are happy to see you again ...
+    </div>
+  </div>
+  <div class="profile__body">
+    <div class="data-header">Your profile information</div>
+    <div class="column-container">
+      <div class="column">
+        <div class="column__element">
+          Firstname: <span class="column__element__value">{{profile.firstname}}</span>
+        </div>
+        <div class="column__element">
+          Birthday: <span class="column__element__value">{{profile.birthday}}</span>
+        </div>
+        <div class="column__element">
+          Address: <span class="column__element__value">{{profile.address}}</span>
+        </div>
+      </div>
+      <div class="column">
+        <div class="column__element">
+          Lastname: <span class="column__element__value">{{profile.lastname}}</span>
+        </div>
+        <div class="column__element">
+          Phone: <span class="column__element__value">{{profile.phone}}</span>
+        </div>
+        <div class="column__element">
+          E-Mail: <span class="column__element__value">{{profile.email}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

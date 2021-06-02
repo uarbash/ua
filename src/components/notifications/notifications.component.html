@@ -1,0 +1,21 @@
+<div class="container" [ngClass]="{'closed-notifications': !isOpen}">
+  <div class="material-icons notifications-icon" id="notification_icon"
+       (click)="onClickToggle()"
+       [ngClass]="{'new-notifications': isNotifications}" >{{notificationIconName}}</div>
+  <div class="notifications-body">
+    <div class="content">
+      <div class="notification" [ngClass]="{'new-notification': notification.newRequest}"
+           (click)="onClickNotification(i)"
+           *ngFor="let notification of notificationsList; index as i">{{notification.label}}
+        <div class="icons-container">
+          <div class="material-icons accept-icon" id="notification_accept" (click)="acceptRequest(i)">done</div>
+          <div class="material-icons reject-icon" id="notification_reject" (click)="rejectRequest()">close</div>
+        </div>
+      </div>
+      <div class="empty-notifications" *ngIf="!notificationsList.length">
+        <div class="material-icons error-icon">error_outline</div>
+        There are no notifications to display
+      </div>
+    </div>
+  </div>
+</div>

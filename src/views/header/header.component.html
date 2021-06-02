@@ -1,0 +1,17 @@
+<div class="header-wrapper">
+  <div class="logo" routerLink="">U.A...</div>
+  <div class="menu-items">
+    <div class="item" *ngIf="isSignedIn">
+      <app-notifications></app-notifications>
+    </div>
+    <div class="item" routerLink="">Homepage</div>
+    <div class="item" routerLink="user/signin" *ngIf="!isSignedIn">Sign in</div>
+    <div class="item" routerLink="user/signup" *ngIf="!isSignedIn">Sign up</div>
+    <div class="item" routerLink="user/contacts" *ngIf="isSignedIn">Contacts</div>
+    <div class="item" routerLink="user/profile" *ngIf="isSignedIn">Profile</div>
+    <div class="item" routerLink="user/signin" *ngIf="isSignedIn" (click)="onClickSignOut()">
+      Sign out
+      <div class="material-icons logout-icon">logout</div>
+    </div>
+  </div>
+</div>

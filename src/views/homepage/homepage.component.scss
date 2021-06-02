@@ -1,0 +1,13 @@
+.dashboard-wrapper{
+  padding: 10rem 2rem;
+  .headline{
+    font-size: 10rem;
+    color: #FF9800;
+    user-select: none;
+    .headline-light{
+      color: #616161;
+      font-size: 1.125rem;
+      margin-left: -2.5rem;
+    }
+  }
+}

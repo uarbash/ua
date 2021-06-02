@@ -1,0 +1,112 @@
+.contacts{
+  padding: 1.5rem 3rem;
+  &__columns-container{
+    display: flex;
+    justify-content: space-between;
+    .column{
+      &__1{
+        width: 20%;
+        .search-results-container{
+          margin-top: 2rem;
+          max-height: 20rem;
+          overflow: auto;
+          .result-item{
+            border: 1px solid #616161;
+            border-radius: .125rem;
+            &:not(:first-child){
+              margin-top: 1.125rem;
+            }
+            &__header{
+              padding: .625rem 1rem;
+              border-bottom: .0625rem solid #FF9800;
+              border-bottom-left-radius: .425rem;
+              display: flex;
+              align-items: center;
+              position: relative;
+              cursor: pointer;
+              &:hover{
+                color: #FF9800;
+                background: #616161;
+              }
+              .add-icon{
+                position: absolute;
+                right: .625rem;
+              }
+            }
+            &__body{
+              padding: .4rem .625rem;
+              .body-item{
+                &:not(:first-child){
+                  margin-top: .125rem;
+                }
+              }
+            }
+          }
+        }
+      }
+      &__2{
+        width: 20%;
+        .list-container{
+          .item{
+            color: #616161;
+            border: .0625rem solid #616161;
+            padding: .625rem 1rem;
+            border-radius: .125rem;
+            cursor: pointer;
+            &:hover{
+              background: #616161;
+              color: #FF9800;
+            }
+            &:not(:first-child){
+              margin-top: 1.125rem;
+            }
+          }
+        }
+      }
+      &__3 {
+        width: 40%;
+        .account-container{
+          .header{
+            padding: .625rem 0;
+            color: #FF9800;
+            display: flex;
+            align-items: center;
+            position: relative;
+            .close-icon{
+              position: absolute;
+              right: .625rem;
+              color: #616161;
+              cursor: pointer;
+              &:hover{
+                color: #FF9800;
+              }
+            }
+          }
+          .body{
+            padding: 2rem 0;
+            .columns-container{
+              display: flex;
+              justify-content: space-between;
+              border: .0625rem solid #616161;
+              padding: 1rem;
+              .column{
+                .item{
+                  margin-top: 1rem;
+                }
+                width: 50%;
+                &:not(:first-child){
+                  padding-left: 1rem;
+                  border-left: .0625rem solid #616161;
+                }
+                &:first-child{
+                  padding-right: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

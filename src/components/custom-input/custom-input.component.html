@@ -1,0 +1,9 @@
+<div class="input-wrapper">
+  <input class="input-field" [formControl]="control" [type]="type"/>
+  <label class="input-label" [ngClass]="{'label-pos-up': control.value}">{{label}}</label>
+  <div class="material-icons visibility-icon" (click)="showPassword()"
+       *ngIf="enablePasswordChecking && getValue"
+  >
+    visibility
+  </div>
+</div>

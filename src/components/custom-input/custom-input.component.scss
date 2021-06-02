@@ -1,0 +1,45 @@
+.input-wrapper{
+  position: relative;
+  .input-field{
+    padding: .625rem 1rem;
+    font-size: 1rem;
+    width: 100%;
+    outline: none;
+    border: 1px solid #616161;
+    color: #616161;
+    background: #fff;
+    &:focus{
+      border-color: #FF9800;
+      + .input-label{
+        top: -.475rem;
+        left: .725rem;
+      }
+    }
+  }
+  .input-label{
+    position: absolute;
+    left: 1rem;
+    color: #616161;
+    top: .825rem;
+    padding: 0 .1625rem;
+    background: #fff;
+    font-size: .825rem;
+    pointer-events: none;
+    transition: .25s ease all;
+  }
+  .label-pos-up{
+    top: -.475rem;
+    left: .725rem;
+  }
+  .visibility-icon{
+    position: absolute;
+    top: .625rem;
+    right: .5rem;
+    color: #616161;
+    font-size: 1.25rem;
+    cursor: pointer;
+    &:hover{
+      color:#FF9800;
+    }
+  }
+}

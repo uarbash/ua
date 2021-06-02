@@ -1,0 +1,90 @@
+.container{
+  position: relative;
+  padding-top: 1rem;
+}
+.notifications-icon{
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: -.15rem;
+  left: -0.6875rem;
+  user-select: none;
+}
+.new-notifications{
+  color: #FF9800;
+  animation: vibration infinite linear .5s alternate;
+}
+.notifications-body{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-top: 2rem;
+  right: -2.1rem;
+  background: #eee;
+  pointer-events: none;
+  position: absolute;
+  width: 25rem;
+  &:before{
+    content: ' ';
+    position: absolute;
+    top:-1.255rem;
+    right: 0.3125rem;
+    border-top: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 2rem solid #eee;
+    transform: rotate(135deg);
+  }
+  .notification{
+    padding: 1rem .625rem;
+    cursor: pointer;
+    color: #616161;
+    pointer-events: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &:hover{
+      background: #bbb;
+    }
+    .icons-container{
+      pointer-events: none;
+      .accept-icon, .reject-icon{
+        border: .0625rem solid transparent;
+        border-radius: .325rem;
+        pointer-events: auto;
+        &:hover{
+          border-color: #eee;
+        }
+      }
+      .accept-icon{
+        margin-right: .25rem;
+      }
+    }
+  }
+  .new-notification{
+    color: #FF9800;
+  }
+}
+.closed-notifications{
+  .notifications-body{
+    display: none;
+  }
+}
+.content{
+  pointer-events: auto;
+  max-height: 10rem;
+  overflow: auto;
+  .empty-notifications{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    color: #616161;
+    user-select: none;
+    .error-icon{
+      margin-bottom: 1rem;
+    }
+  }
+}
+@keyframes vibration {
+  from { transform: rotate(10deg);}
+  to {transform: rotate(-10deg);}
+}

@@ -1,0 +1,12 @@
+<div class="wrapper">
+  <div class="container">
+    <div class="chat-container" #container>
+      <div class="msg-container" *ngFor="let msg of chatHistory" [ngClass]="{'received':!msg.iSent}">
+        <div class="msg">
+          {{msg.text}}
+        </div>
+      </div>
+    </div>
+    <input class="chat-input" (keydown.enter)="sendMsg($event)">
+  </div>
+</div>

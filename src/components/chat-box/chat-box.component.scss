@@ -1,0 +1,34 @@
+.wrapper{
+  .chat-container{
+    height: 15rem;
+    overflow: auto;
+    padding-right: 1rem;
+  }
+  .container{
+    padding: .125rem 0 2rem 1rem;
+    .msg-container{
+      display: flex;
+      justify-content: flex-end;
+    }
+    .msg{
+      background: #616161;
+      border-radius: 1.5rem;
+      color: #fff;
+      display: inline-flex;
+      padding: .625rem 1rem;
+      margin-top: .225rem;
+    }
+    .received{
+      justify-content: flex-start;
+      .msg{
+        background: #FF9800;
+      }
+    }
+    .chat-input{
+      margin-top: 2rem;
+      width: 100%;
+      padding: .5rem;
+      color: #616161;
+    }
+  }
+}

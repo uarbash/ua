@@ -1,0 +1,28 @@
+.signup{
+  width: 35%;
+  margin: 5rem auto;
+  .signup__header{
+    color: #FF9800;
+    font-size: 1.125rem;
+  }
+  .signup__content{
+    margin-top: 2.5rem;
+    .category{
+      &:not(:first-child){
+        margin-top: 1.5rem;
+      }
+      &:last-child{
+        margin-bottom: 2rem;
+      }
+      .toggle-box-element{
+        &:not(:first-child){
+          margin-top: 1.125rem;
+        }
+      }
+    }
+  }
+  .btn-group{
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,64 @@
+*{
+  font-family: arial, serif;
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button{
+  border:none;
+}
+
+.default-btn{
+  cursor: pointer;
+  background: #616161;
+  color: #F5F5F5;
+  border-radius: 1.5rem;
+  padding: .175rem 1rem;
+  transition: .25s ease all;
+  &:hover{
+    background: #FF9800;
+  }
+  &:disabled{
+    cursor: default;
+    &:hover{
+      background: #616161 !important;
+    }
+  }
+}
+.material-icons{
+  user-select: none;
+}
+.text-yellow{
+  color: #FF9800;
+}
+
+
+::-moz-selection {
+  background: #616161;
+  color: #FF9800;
+}
+::selection {
+  background: #616161;
+  color: #FF9800;
+}
+::-webkit-scrollbar {
+  width: .625rem;
+}
+::-webkit-scrollbar-track {
+  background: #BDBDBD;
+  border-radius: 1.5rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #FF9800;
+  border-radius: 1.5rem;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+input:-webkit-autofill{
+  background-color: red !important;
+}

@@ -1,0 +1,57 @@
+.profile{
+  padding: 2rem 3rem;
+  &__header{
+    .welcome-msg{
+      font-size: 1.5rem;
+      color: #616161;
+      .header-name{
+        color: #FF9800;
+      }
+    }
+  }
+  &__body{
+    width: 60%;
+    margin: 3rem auto;
+    position: relative;
+    .data-header{
+      font-size: 1.125rem;
+      color: #FF9800;
+      margin: 1.25rem 2rem;
+    }
+    .column-container{
+      display: flex;
+      justify-content: space-between;
+      .column{
+        width: 50%;
+        &:not(:first-child){
+          padding-left: 2rem;
+          border-left: 1px solid #FF9800;
+        }
+        &:first-child{
+          padding-right: 2rem;
+        }
+        &__element{
+          &:not(:first-child){
+            margin-top:1.125rem;
+          }
+          display: flex;
+          justify-content: space-between;
+          color: #616161;
+          font-size: 1rem;
+          &__value{
+            &:hover{
+              color: #FF9800;
+            }
+          }
+        }
+      }
+    }
+    .notification-element{
+      position: absolute;
+      top:-.3rem;
+      left: -1rem;
+    }
+  }
+}
+
+

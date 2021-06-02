@@ -1,0 +1,44 @@
+$header-height: 3rem;
+
+.toggle-box{
+  position: relative;
+  padding-top:5rem;
+  width: 100%;
+  &__header{
+    position: absolute;
+    top:0;
+    left:0;
+    right: 0;
+    height: $header-height;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    user-select: none;
+    color: #616161;
+    &__text{
+      height: $header-height;
+      border-bottom: 2px solid #FF9800;
+      display: inline-block;
+      font-size: 1.25rem;
+    }
+    &__icon{
+      position: absolute;
+      font-size: 2rem;
+      right: 0;
+      top:0;
+      transform: rotate(180deg);
+    }
+  }
+  &__body{
+
+  }
+}
+.toggle-box-closed{
+  padding-top:$header-height;
+  .toggle-box__header__icon{
+    transform: rotate(0);
+  }
+  .toggle-box__body{
+    display: none;
+  }
+}

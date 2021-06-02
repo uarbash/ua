@@ -1,0 +1,22 @@
+<form [formGroup]="signInController" >
+  <div class="signin">
+    <div class="signin-wrapper">
+      <div class="signin-container">
+        <div class="signin-element">
+          <app-custom-input label="E-Mail" [control]="this.signInController.controls['email']"></app-custom-input>
+        </div>
+        <div class="signin-element">
+          <app-custom-input label="Password" type="password" [enablePasswordChecking]="true" [control]="this.signInController.controls['password']"></app-custom-input>
+        </div>
+      </div>
+      <div class="wrong-passwordEmail" *ngIf="wrongData">
+        Wrong password or email
+      </div>
+    </div>
+    <div class="btn-container">
+      <button class="default-btn" [disabled]="!isSignInFormValid" (click)="onSubmit()">
+        Sign in
+      </button>
+    </div>
+  </div>
+</form>

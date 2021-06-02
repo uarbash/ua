@@ -1,0 +1,55 @@
+<form [formGroup]="signUpController">
+  <div class="signup">
+    <div class="signup__header">
+      A few steps and your account is set up and ready to use
+    </div>
+    <div class="signup__content">
+      <div class="category">
+        <app-toggle-box header="Personal Information">
+          <div class="toggle-box-element">
+            <app-custom-input label="Firstname" [control]="this.signUpController.controls['firstname']"></app-custom-input>
+          </div>
+          <div class="toggle-box-element">
+            <app-custom-input label="Lastname" [control]="this.signUpController.controls['lastname']"></app-custom-input>
+          </div>
+          <div class="toggle-box-element">
+            <app-custom-input label="Birthday" [control]="this.signUpController.controls['birthday']"></app-custom-input>
+          </div>
+        </app-toggle-box>
+      </div>
+      <div class="category">
+        <app-toggle-box header="Contact Information">
+          <div class="toggle-box-element">
+            <app-custom-input label="phone" [control]="this.signUpController.controls['phone']"></app-custom-input>
+          </div>
+          <div class="toggle-box-element">
+            <app-custom-input label="Address" [control]="this.signUpController.controls['address']"></app-custom-input>
+          </div>
+        </app-toggle-box>
+      </div>
+      <div class="category">
+        <app-toggle-box header="Account Information">
+          <div class="toggle-box-element">
+            <app-custom-input label="E-Mail" [control]="this.signUpController.controls['email']"></app-custom-input>
+          </div>
+          <div class="toggle-box-element">
+            <app-custom-input label="Password" type="password"
+                              [enablePasswordChecking]="true"
+                              [control]="this.signUpController.controls['password']"></app-custom-input>
+          </div>
+          <div class="toggle-box-element">
+            <app-custom-input label="Password Confirmation" type="password"
+                              [enablePasswordChecking]="true"
+                              [control]="this.signUpController.controls['passwordConfirmation']"></app-custom-input>
+          </div>
+        </app-toggle-box>
+      </div>
+    </div>
+    <div class="btn-group">
+      <button class="default-btn" [disabled]="!isSignUpFormValid" (click)="onSubmit()">
+        Sign up
+      </button>
+    </div>
+  </div>
+
+</form>
