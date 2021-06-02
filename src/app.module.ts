@@ -18,6 +18,7 @@ import {ContactsComponent} from './modules/contacts/contacts.component';
 import {ProfileComponent} from './modules/profile/profile.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { ChatBoxComponent } from './components/chat-box/chat-box.component';
+import {ProfileFriendComponent} from './components/profile-friend/profile-friend.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ChatBoxComponent } from './components/chat-box/chat-box.component';
     ContactsComponent,
     ProfileComponent,
     NotificationsComponent,
-    ChatBoxComponent
+    ChatBoxComponent,
+    ProfileFriendComponent
   ],
   imports: [
     BrowserModule,

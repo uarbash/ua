@@ -4,8 +4,15 @@
     display: flex;
     justify-content: space-between;
     .column{
+      &__1 , &__2{
+        width: 25%;
+        height: 84vh;
+        padding-right: 1rem;
+        overflow: auto;
+        position: sticky;
+        top: 5.4375rem;
+      }
       &__1{
-        width: 20%;
         .search-results-container{
           margin-top: 2rem;
           max-height: 20rem;
@@ -43,13 +50,8 @@
             }
           }
         }
-        height: 17rem;
-        overflow: auto;
-        position: sticky;
-        top: 5.4375rem;
       }
       &__2{
-        width: 20%;
         .list-container{
           .item{
             color: #616161;
@@ -66,13 +68,9 @@
             }
           }
         }
-        height: 17rem;
-        overflow: auto;
-        position: sticky;
-        top: 5.4375rem;
       }
       &__3 {
-        width: 40%;
+        width: 35%;
         .account-container{
           .header{
             padding: .625rem 0;

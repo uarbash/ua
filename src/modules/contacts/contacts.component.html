@@ -36,35 +36,7 @@
     </div>
     <div class="column__3">
       <div class="profile-card-container" *ngFor="let selectedProfile of selectedProfileList; index as i">
-        <app-toggle-box header="{{selectedProfile.firstname}}'s Profile" *ngIf="selectedProfile">
-          <div class="account-container">
-            <div class="header">
-              {{selectedProfile.firstname}} {{selectedProfile.lastname}}
-              <div class="material-icons close-icon" (click)="onClickCloseProfile(i)">close</div>
-            </div>
-            <div class="body">
-              <div class="columns-container">
-                <div class="column">
-                  <div class="item">
-                    Birthday: <span class="text-yellow">{{selectedProfile.birthday}}</span>
-                  </div>
-                  <div class="item">
-                    Address: <span class="text-yellow">{{selectedProfile.address}}</span>
-                  </div>
-                </div>
-                <div class="column">
-                  <div class="item">
-                    Phone: <span class="text-yellow">{{selectedProfile.phone}}</span>
-                  </div>
-                  <div class="item">
-                    E-Mail: <span class="text-yellow">{{selectedProfile.email}}</span>
-                  </div>
-                </div>
-              </div>
-              <app-chat-box *ngIf="selectedProfile" [selectedProfile]="selectedProfile" ></app-chat-box>
-            </div>
-          </div>
-        </app-toggle-box>
+        <app-profile-friend [selectedProfile]="selectedProfile" [index]="i" (isClosed)="onClickCloseProfile(i)" ></app-profile-friend>
       </div>
     </div>
   </div>
