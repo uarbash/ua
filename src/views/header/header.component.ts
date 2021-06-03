@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
 
   public onClickSignOut(): void{
     this.dataManagerService.$isSignedIn.next(false);
+    localStorage.clear();
   }
 
   get isSignedIn(): boolean{

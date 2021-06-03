@@ -67,6 +67,7 @@ export class SignUpComponent implements OnInit {
           .subscribe((account) => {
             this.dataManagerService.$isSignedIn.next(true);
             this.dataManagerService.$profile.next(account);
+            this.dataManagerService.sessionStorage();
             this.router.navigate(['../user/profile']);
             this.title.setTitle(account.firstname + ' ' + account.lastname);
           });

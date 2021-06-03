@@ -46,6 +46,7 @@ export class SignInComponent implements OnInit {
       if (account.email !== 'INVALID'){
         this.dataManagerService.$isSignedIn.next(true);
         this.dataManagerService.$profile.next(account);
+        this.dataManagerService.sessionStorage();
         this.router.navigate(['../user/profile']);
         this.wrongData = false;
         this.title.setTitle(account.firstname + ' ' + account.lastname);

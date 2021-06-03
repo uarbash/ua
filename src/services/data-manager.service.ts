@@ -15,4 +15,8 @@ export class DataManagerService {
   public signIn(signInInfo): Observable<Profile>{
     return this.http.post<Profile>(url + '/signin', signInInfo);
   }
+  public sessionStorage(): void{
+    localStorage.setItem('email', this.$profile.getValue().email);
+    localStorage.setItem('password', this.$profile.getValue().password);
+  }
 }

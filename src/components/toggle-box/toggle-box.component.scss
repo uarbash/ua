@@ -27,6 +27,7 @@ $header-height: 3rem;
       right: 0;
       top:0;
       transform: rotate(180deg);
+      transition: .25s ease all;
     }
   }
   &__body{

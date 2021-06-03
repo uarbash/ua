@@ -43,17 +43,12 @@ export class ChatBoxComponent implements AfterViewInit, OnDestroy {
     this.http.put(url + '/contacts?chat', msg).subscribe();
     setTimeout(() => {
       this.fetchChat();
-      this.container.nativeElement.scrollTop = this.container.nativeElement.scrollHeight;
+      this.activeScrollToBottom = true;
     }, 0);
     msgText.target.value = '';
   }
   public onScroll($event): void{
-    if ($event.target.scrollTop + $event.target.offsetHeight === $event.target.scrollHeight){
-      this.activeScrollToBottom = true;
-    }
-    else{
-      this.activeScrollToBottom = false;
-    }
+    this.activeScrollToBottom = $event.target.scrollTop + $event.target.offsetHeight === $event.target.scrollHeight;
   }
   public scrollToBottom(): void{
     if (this.activeScrollToBottom){
