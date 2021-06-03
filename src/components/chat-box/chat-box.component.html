@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container">
-    <div class="chat-container" #container>
+    <div class="chat-container" #container (scroll)="onScroll($event)">
       <div class="msg-container" *ngFor="let msg of chatHistory" [ngClass]="{'received':!msg.iSent}">
         <div class="msg">
           {{msg.text}}
