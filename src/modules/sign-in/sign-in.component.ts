@@ -4,6 +4,7 @@ import {DataManagerService} from '../../services/data-manager.service';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {Profile, url} from '../sign-up/sign-up.component';
+import {Title} from '@angular/platform-browser';
 
 export interface ProfileSignIn {
   email: string;
@@ -20,7 +21,11 @@ export class SignInComponent implements OnInit {
   public signInController: FormGroup;
   public signInInfo: ProfileSignIn;
   public wrongData = false;
-  constructor(private fb: FormBuilder, private dataManagerService: DataManagerService, private http: HttpClient, private router: Router) { }
+  constructor(private fb: FormBuilder,
+              private dataManagerService: DataManagerService,
+              private http: HttpClient,
+              private title: Title,
+              private router: Router) { }
 
   ngOnInit(): void {
     this.signInController = this.fb.group({
@@ -43,6 +48,7 @@ export class SignInComponent implements OnInit {
         this.dataManagerService.$profile.next(account);
         this.router.navigate(['../user/profile']);
         this.wrongData = false;
+        this.title.setTitle(account.firstname + ' ' + account.lastname);
       }
       else{
         this.dataManagerService.$profile.next(null);

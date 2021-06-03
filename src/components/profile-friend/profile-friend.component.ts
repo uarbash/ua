@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter, ElementRef, HostListener, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-profile-friend',
@@ -11,8 +11,17 @@ export class ProfileFriendComponent implements OnInit {
   @Input() public selectedProfile;
   @Input() public index;
   @Output() public  isClosed = new EventEmitter<boolean>();
+  @ViewChild('profileHeader') public profileHeader: ElementRef;
+  @HostListener('window:click', ['$event'])
+  public onClickToggle(event): void {
+    if (this.profileHeader.nativeElement.contains(event.target)) {
+      this.showCard = true;
+    } else {
+      this.showCard = false;
+    }
+  }
 
-  constructor() { }
+  constructor(private eRef: ElementRef) { }
 
   ngOnInit(): void {
 
@@ -25,8 +34,5 @@ export class ProfileFriendComponent implements OnInit {
     if (!this.isCollapse){
       this.showCard = false;
     }
-  }
-  public onClickShowCard(): void{
-    this.showCard = !this.showCard;
   }
 }

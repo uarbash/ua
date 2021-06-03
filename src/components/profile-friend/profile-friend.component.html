@@ -2,7 +2,7 @@
   [customHeader]="true"
   [isOpen]="isCollapse" header="{{selectedProfile.firstname}}'s Profile" *ngIf="selectedProfile">
   <div header class="custom-toggle-box-header">
-    <div class="header-title" (click)="onClickShowCard()">
+    <div class="header-title"  #profileHeader>
       <span class="material-icons profile-icon">account_circle</span>
       {{selectedProfile.firstname}} {{selectedProfile.lastname}}
     </div>

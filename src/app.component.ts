@@ -1,5 +1,4 @@
-import {Component, HostListener} from '@angular/core';
-import {DataManagerService} from './services/data-manager.service';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',

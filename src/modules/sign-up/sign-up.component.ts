@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {DataManagerService} from '../../services/data-manager.service';
 import {Router} from '@angular/router';
+import {Title} from '@angular/platform-browser';
 
 export interface Profile {
   firstname: string;
@@ -25,7 +26,11 @@ export class SignUpComponent implements OnInit {
   public signUpController: FormGroup;
   public profileInfo: Profile;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private dataManagerService: DataManagerService, private router: Router) {
+  constructor(private fb: FormBuilder,
+              private http: HttpClient,
+              private title: Title,
+              private dataManagerService: DataManagerService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
@@ -63,6 +68,7 @@ export class SignUpComponent implements OnInit {
             this.dataManagerService.$isSignedIn.next(true);
             this.dataManagerService.$profile.next(account);
             this.router.navigate(['../user/profile']);
+            this.title.setTitle(account.firstname + ' ' + account.lastname);
           });
       }
       else{
